@@ -1,0 +1,102 @@
+.hero {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: 0 2rem;
+}
+
+.hero__content {
+    text-align: center;
+    z-index: 10;
+    max-width: 1200px;
+}
+
+.hero__title {
+    font-size: clamp(3rem, 8vw, 8rem);
+    line-height: 0.9;
+    margin-bottom: 2rem;
+    letter-spacing: -2px;
+}
+
+.text-highlight {
+    color: transparent;
+    -webkit-text-stroke: 2px var(--color-primary);
+    position: relative;
+}
+
+.text-highlight::before {
+    content: 'WEB OF TOMORROW';
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: var(--color-primary);
+    opacity: 0.1;
+    filter: blur(10px);
+}
+
+.hero__subtitle {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    color: var(--color-text-dim);
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero__actions {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.hero__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.4;
+    animation: float 10s infinite ease-in-out;
+}
+
+.orb--1 {
+    width: 60vw;
+    height: 60vw;
+    background: var(--color-primary);
+    top: -20%;
+    left: -20%;
+    animation-delay: 0s;
+}
+
+.orb--2 {
+    width: 50vw;
+    height: 50vw;
+    background: var(--color-secondary);
+    bottom: -20%;
+    right: -20%;
+    animation-delay: -5s;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(30px, 30px);
+    }
+}
