@@ -39,7 +39,7 @@
 }
 
 .hero__brand-right {
-    background-image: url('public/text-bg.jpg');
+    background-image: url('/text-bg.jpg');
     background-size: 100%;
     background-position: right center;
     -webkit-background-clip: text;
