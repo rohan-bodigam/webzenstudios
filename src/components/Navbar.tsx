@@ -26,7 +26,7 @@ const Navbar: React.FC = () => {
             </div>
 
             <div className="navbar__cta">
-                <Button variant="outline">Let's Talk</Button>
+                <a href="#contact"><Button variant="outline">Let's Talk</Button></a>
             </div>
         </nav>
     );

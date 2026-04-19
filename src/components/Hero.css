@@ -1,102 +1,88 @@
 .hero {
-    height: 100vh;
+    position: relative;
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+    height: 100vh;
     overflow: hidden;
-    padding: 0 2rem;
 }
 
-.hero__content {
-    text-align: center;
-    z-index: 10;
-    max-width: 1200px;
-}
-
-.hero__title {
-    font-size: clamp(3rem, 8vw, 8rem);
-    line-height: 0.9;
-    margin-bottom: 2rem;
-    letter-spacing: -2px;
-}
-
-.text-highlight {
-    color: transparent;
-    -webkit-text-stroke: 2px var(--color-primary);
-    position: relative;
-}
-
-.text-highlight::before {
-    content: 'WEB OF TOMORROW';
-    position: absolute;
-    top: 0;
-    left: 0;
-    color: var(--color-primary);
-    opacity: 0.1;
-    filter: blur(10px);
-}
-
-.hero__subtitle {
-    font-size: clamp(1rem, 2vw, 1.5rem);
-    color: var(--color-text-dim);
-    margin-bottom: 3rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.hero__actions {
-    display: flex;
-    gap: 1.5rem;
-    justify-content: center;
-}
-
-.hero__background {
-    position: absolute;
-    top: 0;
-    left: 0;
+.hero__image {
     width: 100%;
     height: 100%;
-    z-index: 0;
-    pointer-events: none;
+    object-fit: cover;
+    display: block;
 }
 
-.orb {
+.hero__bottom-text {
     position: absolute;
-    border-radius: 50%;
-    filter: blur(100px);
-    opacity: 0.4;
-    animation: float 10s infinite ease-in-out;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 450px;
+    display: flex;
+    pointer-events: none;
+    z-index: 10;
 }
 
-.orb--1 {
-    width: 60vw;
-    height: 60vw;
-    background: var(--color-primary);
-    top: -20%;
-    left: -20%;
-    animation-delay: 0s;
+.hero__brand-left,
+.hero__brand-right {
+    font-size: clamp(4rem, 9vw, 9rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 0.9;
+    width: 50%;
+    padding: 0 1.5rem 0.75rem;
+    font-family: 'Inter', sans-serif;
 }
 
-.orb--2 {
-    width: 50vw;
-    height: 50vw;
-    background: var(--color-secondary);
-    bottom: -20%;
-    right: -20%;
-    animation-delay: -5s;
+.hero__brand-left {
+    color: #fff;
 }
 
-@keyframes float {
+.hero__brand-right {
+    background-image: url('public/text-bg.jpg');
+    background-size: 100%;
+    background-position: right center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
 
-    0%,
-    100% {
-        transform: translate(0, 0);
+/* MOBILE (below 768px) */
+@media (max-width: 768px) {
+
+    .hero {
+        height: 100vh;
     }
 
-    50% {
-        transform: translate(30px, 30px);
+    .hero__bottom-text {
+        top: 100px;              /* remove fixed top */
+        bottom: 20px;           /* stick to bottom */
+        flex-direction: column; /* stack text */
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 10px;
+        padding: 0 10px;
+    }
+
+    .hero__brand-left,
+    .hero__brand-right {
+        width: 100%;
+        font-size: clamp(2rem, 10vw, 3.5rem); /* smaller for mobile */
+        padding: 0;
+        line-height: 1;
+    }
+
+    .hero__brand-left {
+        color: #fff;
+    }
+
+    .hero__brand-right {
+        background-image: url('public/text-bg.jpg');
+        background-size: cover;
+        background-position: center;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
     }
 }

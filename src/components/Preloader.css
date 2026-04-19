@@ -1,0 +1,28 @@
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* ← masks letters coming from top */
+
+  z-index: 9999;
+}
+
+.letter {
+  font-size: 3rem;
+  color: #ffffff;
+  font-weight: bolder;
+  margin: 0 5px;
+  display: inline-block;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.letter-wrapper {
+    display: inline-block;
+}

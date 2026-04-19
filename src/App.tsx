@@ -1,12 +1,20 @@
+import { useState } from 'react';
 import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Services from './components/Services';
 import Work from './components/Work';
-import Team from './components/Team';
+
 import Contact from './components/Contact';
+import Preloader from './components/Preloader';
 
 const App: React.FC = () => {
+
+  const [loading, setLoading] = useState(true);
+
+  if (loading) {
+    return <Preloader setLoading={setLoading} />;
+  }
   return (
     <>
       <Navbar />
@@ -14,7 +22,7 @@ const App: React.FC = () => {
         <Hero />
         <Services />
         <Work />
-        <Team />
+        
         <Contact />
       </main>
     </>

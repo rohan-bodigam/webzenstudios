@@ -3,10 +3,29 @@ import { motion } from 'framer-motion';
 import Button from './Button';
 import './Work.css';
 
+
 const projects = [
-    { title: 'NEON REALTY', category: 'Web App', color: '#ff0099' },
-    { title: 'NEXUS FINANCE', category: 'Fintech', color: '#00f0ff' },
-    { title: 'CYBER WEAR', category: 'E-commerce', color: '#ccff00' },
+    {
+        title: 'KRIO ENERGY',
+        category: 'Ecommerce Website',
+        color: '#ff0099',
+        url: 'https://krioenergy.com/',
+        img: '/krio-mockup.png'
+    },
+    {
+        title: 'SWATHI BUILDTECH',
+        category: 'Construction',
+        color: '#00f0ff',
+        url: 'https://swathibuildtech.in/',
+        img: '/swathi-mockup.png'
+    },
+    {
+        title: 'GAYATRI DEVI PLAY SCHOOL',
+        category: 'Education',
+        color: '#ccff00',
+        url: 'https://gayatrideviplayschool.in/',
+        img: '/school-mockup.png'
+    },
 ];
 
 const Work: React.FC = () => {
@@ -19,21 +38,27 @@ const Work: React.FC = () => {
 
             <div className="work__grid">
                 {projects.map((project, index) => (
-                    <motion.div
+                    <motion.a
                         key={index}
+                        href={project.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="project-card"
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5 }}
                     >
-                        <div className="project-card__content" style={{ backgroundColor: project.color }}>
+                        <div
+                            className="project-card__content"
+                            style={{ backgroundImage: `url(${project.img})` }}
+                        >
                             <div className="project-card__overlay">
                                 <h3>{project.title}</h3>
                                 <span>{project.category}</span>
                             </div>
                         </div>
-                    </motion.div>
+                    </motion.a>
                 ))}
             </div>
         </section>

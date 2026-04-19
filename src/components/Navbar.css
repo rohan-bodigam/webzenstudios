@@ -9,7 +9,7 @@
     padding: 2rem 4rem;
     z-index: 1000;
     transition: all 0.3s ease;
-    mix-blend-mode: difference;
+    /* mix-blend-mode: difference; */
     color: #fff;
 }
 
@@ -61,7 +61,7 @@
 }
 
 .navbar__links a:hover {
-    color: var(--color-primary);
+    color: #fff;
 }
 
 @media (max-width: 768px) {
