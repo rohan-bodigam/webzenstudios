@@ -26,6 +26,20 @@ const projects = [
         url: 'https://gayatrideviplayschool.in/',
         img: '/school-mockup.png'
     },
+    {
+        title: 'HAPPY DRIVEZ',
+        category: 'Buisiness ',
+        color: '#ccff00',
+        url: 'https://happy-drivez.vercel.app/',
+        img: '/happy-drivez.png'
+    },
+    {
+        title: 'Blisva',
+        category: 'Wellness',
+        color: '#ccff00',
+        url: 'https://blisva-web.vercel.app/',
+        img: '/blisva.png'
+    }
 ];
 
 const Work: React.FC = () => {

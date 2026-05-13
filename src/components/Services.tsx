@@ -4,7 +4,7 @@ import './Services.css';
 
 const services = [
     {
-        title: 'Custom Web Apps',
+        title: 'Custom Websites',
         description: 'Tailor-made solutions for complex business needs. Scalable, secure, and built for performance.',
         icon: '⚡',
         color: 'var(--color-primary)'
@@ -16,9 +16,9 @@ const services = [
         color: 'var(--color-secondary)'
     },
     {
-        title: 'Android Applications',
-        description: 'Native and cross-platform mobile experiences that users love. Smooth, fast, and feature-rich.',
-        icon: '📱',
+        title: 'WordPress Development',
+        description: 'Flexible content management systems. Custom themes, plugins, and seamless integrations for content-driven sites.',
+        icon: '📝',
         color: 'var(--color-accent)'
     },
     {
